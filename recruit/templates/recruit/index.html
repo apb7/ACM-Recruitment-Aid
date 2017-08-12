@@ -1,0 +1,17 @@
+{% if recruit_list %}
+<ul>
+    {%for recruit in recruit_list%}
+    <li><a href="{% url 'recruit:detail' recruit.id%}">{{recruit.name}}</a></li>
+    {%endfor%}
+</ul>
+{%else%}
+<p>No recruits are added yet!</p>
+{%endif%}
+<row>
+<form action="/recruit/add/">
+    <input type="submit" value="Add Recruit" style="width: 150px;"/>
+</form>
+<form action="/recruit/exist/">
+    <input type="submit" value="Existing Recruit" style="width: 150px;"/>
+</form>
+</row>
