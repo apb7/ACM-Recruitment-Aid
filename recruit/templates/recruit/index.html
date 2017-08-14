@@ -1,3 +1,9 @@
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'recruit/css/bootstrap.min.css' %}" type="text/css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<h2>BITS ACM Recruitment App</h2>
+
+
 {% if recruit_list %}
 <ul>
     {%for recruit in recruit_list%}
