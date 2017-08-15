@@ -5,11 +5,11 @@
 
 
 {% if recruit_list %}
-<ul>
+<ol>
     {%for recruit in recruit_list%}
     <li><a href="{% url 'recruit:detail' recruit.id%}">{{recruit.name}}</a></li>
     {%endfor%}
-</ul>
+</ol>
 {%else%}
 <p>No recruits are added yet!</p>
 {%endif%}
