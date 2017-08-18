@@ -7,16 +7,20 @@
 {% if recruit_list %}
 <ol>
     {%for recruit in recruit_list%}
+    {%for member in recruit.member_set.all%}
+        {%if member.task_status%}
     <li><a href="{% url 'recruit:detail' recruit.id%}">{{recruit.name}}</a></li>
+    {%endif%}
+    {%endfor%}
     {%endfor%}
 </ol>
 {%else%}
 <p>No recruits are added yet!</p>
 {%endif%}
 <row>
-<form action="/recruit/add/">
-    <input type="submit" value="Add Recruit" style="width: 150px;"/>
-</form>
+ {% comment %} <form action="/recruit/add/">  {% endcomment %}
+ {% comment %} <input type="submit" value="Add Recruit" style="width: 150px;"/>  {% endcomment %}
+ {% comment %} </form>  {% endcomment %}
 <form action="/recruit/exist/">
     <input type="submit" value="Existing Recruit" style="width: 150px;"/>
 </form>

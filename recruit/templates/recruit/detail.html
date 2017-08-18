@@ -11,12 +11,14 @@
 <th style="border: 1px solid black;">Grilled by</th>
 <th style="border: 1px solid black;">Remarks</th>
 <th style="border: 1px solid black;">Task</th>
+<th style="border: 1px solid black;">Task Done</th>
 </tr>
 {% for member in recruit.member_set.all %}
 <tr>
 <td style="border: 1px solid black; text-align:center">{{member.grilled_by}}</td>
 <td style="border: 1px solid black;">{{member.remarks}}</td>
 <td style="border: 1px solid black;">{{member.task}}</td>
+<td style="border: 1px solid black;">{{member.task_status}}</td>
 </tr>
 {%endfor%}
 </table>
