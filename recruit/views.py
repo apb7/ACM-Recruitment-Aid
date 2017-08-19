@@ -48,3 +48,12 @@ def exist_recruit(request):
         mem_form=MemberForm()
 
     return render(request, "recruit/exist_recruit.html", {'mem_form': mem_form,})
+
+
+class RecordView(generic.ListView):
+    template_name = "recruit/record.html"
+    context_object_name = "recruit_list"
+
+    def get_queryset(self):
+        """Return the recruit list in alphabetical order!"""
+        return Recruit.objects.all().order_by("name")

@@ -1,0 +1,15 @@
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'recruit/css/bootstrap.min.css' %}" type="text/css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<h2>BITS ACM Existing Recruits List</h2>
+
+
+{% if recruit_list %}
+<ol>
+    {%for recruit in recruit_list%} 
+    <li><a href="{% url 'recruit:detail' recruit.id%}">{{recruit.name}}</a></li>
+     {%endfor%}
+</ol>
+{%else%}
+<p>No recruits are added yet!</p>
+{%endif%}
